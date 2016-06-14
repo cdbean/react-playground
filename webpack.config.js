@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './index',
+  entry: './src/js/index',
   output: {
     filename: 'browser-bundle.js'
   },
@@ -7,11 +7,12 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js|jsx$/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
-        }
+        },
+        exclude: './node_modules'
       },
     ]
   }
